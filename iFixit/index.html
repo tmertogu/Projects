@@ -1,0 +1,44 @@
+<!doctype html>
+<!--<html class="no-js" lang="en" dir="ltr">-->
+<html ng-app="postExample">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundation for Sites</title>
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="iFixit/app.css">
+
+    <!--<script src="app.js"></script>-->
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.2.min.js"></script>
+    <script type="text/javascript" src="http://use.typekit.com/oya4cmx.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <h1>iFixit Devices</h1>
+      </header>
+      <section id="fetch">
+        <input type="text" placeholder="Enter some text" id="searchText" />
+        <button id="search" onclick="printText()">Find some devices</button>
+      </section>
+      <section id="poster">
+      </section>
+      <div>
+        <ul id="placeholder"></ul>
+      </div>
+    </div>
+
+
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/what-input.js"></script>
+    <script src="js/vendor/foundation.js"></script>
+    <script src="iFixit/app.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>
