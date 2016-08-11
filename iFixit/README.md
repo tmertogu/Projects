@@ -1,3 +1,7 @@
+This application was built starting from Zurb's Foundation-6 framework.  
+To keep my edits simple, all of my additions and changes are contained within edits/* or in index.html
+All of the files in css/ and js/ are unaltered from Foundation-6 Complete.
+
 Simple Web Application using the iFixit API
 
 Specifications:
