@@ -86,10 +86,3 @@ GearBag.prototype.dropTable = function () {
         );
     });
 };
-
-
-
-
-
-
-

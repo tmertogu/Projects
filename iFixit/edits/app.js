@@ -1,3 +1,7 @@
+document.addEventListener("offline", function() {
+    alert("No internet connection");
+}, false);
+
 var addItem = function (itemID) {
     var listItem = document.getElementById(itemID);
     myGearBag.showHide(listItem.name, "TRUE");
@@ -58,7 +62,11 @@ $(document).ready(function () {
                 output+="</ul>";
                 $('bag').html(output);
             },
-            dataType: "json"
+            dataType: "json",
+            error: function(){
+                alert("ERR_INTERNET_DISCONNECTED\n"
+                +"Please check your network connection and try again.");
+            }
         });
 
     };
@@ -66,8 +74,6 @@ $(document).ready(function () {
     $('#searchText').keyup(function(){
         clearTimeout(timeoutID);
         var $searchText = $(this);
-        timeoutID = setTimeout(function () { findDev($searchText.val()); }, 500);
+        timeoutID = setTimeout(function () { findDev($searchText.val()); }, 200);
     });
 });
-
-
