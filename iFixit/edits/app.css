@@ -31,6 +31,20 @@
     background: transparent
 }
 
+ul {
+  list-style-type: none;
+}
+
+li img{
+    float: left;
+    margin: 0 15px 0 0;
+}
+
+li {
+  padding: 10px;
+  overflow: auto;
+}
+
 .nav ul{
     overflow:hidden; 
     overflow-y:scroll;
