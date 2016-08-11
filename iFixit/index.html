@@ -25,32 +25,42 @@
   </head>
 
   <body>
+
+<!--    Desktop Nav -->
+    <h1 class="header">"Grab Bag" for all of your devices</h1>
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <ul class="menu">
+          <li class="menu-text">What devices do you own?</li>
+        </ul>
+      </div>
+      <div class="top-bar-right">
+        <ul class="dropdown menu" data-dropdown-menu>
+          <li class="menu-text" class="hide-for-small-only">My Grab Bag</li>
+        </ul>
+      </div>
+    </div>
+
+
   <div class="row">
-        <h1 class="header">Welcome to iFixit "Grab-Bag"</h1>
     </div>
     <div class="row">
       <div class="medium-8 columns">
-        <h5>Search below, then click on devices to add them to your bag</h5>
-        <section id="fetch">
-          <input type="text" placeholder="Search for your device by name" id="searchText" />
-        </section>
-        <container id="items">
+        <input type="text" placeholder="Search for your device by name" id="searchText" />
+        <div id="" style="overflow-y: scroll; height:600px;">
           <bag><ul id="bag"></ul></bag>
-        </container>
+        </div>  
       </div>
       <div class="medium-4 columns">
-        <div class="row">
-          <h5>Click on devices to remove</h5>
-          <div class="medium-6 columns">
-            <h5>My Bag</h5>
-          </div>
-          <div align="right" class="medium-6 columns">
-            <label><button onclick='removeAll()'>Delete All</button></label>
+        <div class="top-bar">
+          <div class="top-bar-right">
+            <a href="#" class="show-for-small-only"><label>My Grab Bag</label></a>
+            <a href="#"><button onclick='removeAll()'>Delete All</button></a>
           </div>
         </div>
-        <container id="myItems">
+        <div class="row" id="" style="overflow-y: scroll; height:600px;">
           <myBag><ul id="myBag"></ul></myBag>
-        </container>
+        </div>
       </div>
 
     </div>

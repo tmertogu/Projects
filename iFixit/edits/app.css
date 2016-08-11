@@ -13,7 +13,7 @@
     background: #ff0000;
 }
 .header{
-    padding:10px;
+    //padding:10px;
     text-align: center;
 }
 
@@ -22,9 +22,31 @@
 }
 .container{
     background: #8e8e8e;
-    padding:10px;
+    //padding:10px;
 }
 .h5{
-    padding:20px;
-    text-align: center;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent
+}
+
+.nav ul{
+    overflow:hidden; 
+    overflow-y:scroll;
+}
+
+div.medium-8.columns{
+   padding: 10px; 
+}
+
+div.medium-4.columns{
+   padding: 10px; 
+}
+
+li{
+    list-style-type: none;
 }
