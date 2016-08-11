@@ -15,7 +15,7 @@ Specifications:
 - The local database persists across page reloads.
 
 Bonus:
-    1. Graceful user-experience degradation when the internet connection is cut and the user tries to perform actions.
+   1. Graceful user-experience degradation when the internet connection is cut and the user tries to perform actions.
 - User receives an Alert stating when the internet is cut, and they try to perform an action that requires a network connection.
    
    2. Fullscreen support
