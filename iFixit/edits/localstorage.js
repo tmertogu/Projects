@@ -42,7 +42,8 @@ GearBag.prototype.showHide = function (name, b) {
 
 GearBag.prototype.listAll = function () {
     this.myGearBag.transaction(function (tx) {
-        tx.executeSql('SELECT * FROM GEAR WHERE show = "TRUE"', [], function (tx, results) {
+        tx.executeSql('SELECT * FROM GEAR WHERE show = "TRUE" ORDER BY rowid DESC',
+            [], function (tx, results) {
             var len = results.rows.length, i;
             console.log("Found rows: " + len);
             var output="<ul>";
