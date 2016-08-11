@@ -67,6 +67,16 @@ GearBag.prototype.remove = function (name, summary, img) {
     });
 };
 
+GearBag.prototype.removeHidden = function () {
+    this.myGearBag.transaction(function (tx) {
+        tx.executeSql(
+            'DELETE FROM GEAR WHERE show = "FALSE"', [],
+            function (tx, results) { console.log("Successfully Removed Hidden")},
+            function (tx, error) { console.log("Error, could not remove hidden")}
+        );
+    });
+};
+
 GearBag.prototype.removeAll = function () {
     this.myGearBag.transaction(function (tx) {
         tx.executeSql(
