@@ -22,8 +22,8 @@ var removeAll = function () {
 var createHTML = function (name, summary, img) {
     var html = "<li class='iDevice' >"
                + "<button id='"+name+"' onclick='addItem(this.id)' name='"+name+"'>"
-                 + "<img src='"+img+"'><h3>" + name
-                   + "<div id='addRM'>&#x2714;</div></h3>"
+                 + "<img src='"+img+"'><h4>" + name
+                   + "<div id='addRM'>&#x2714;</div></h4>"
                      + " <p>" + summary + "</p></button></li>";
     return html;
 };
@@ -31,8 +31,8 @@ var createHTML = function (name, summary, img) {
 var createBagHTML = function (name, summary, img) {
   var html = "<li class='myDevice' >"
              + "<button id='"+name+"' onclick='rmItem(this.id)' name='"+name+"'>"
-               + "<img src='"+img+"'><h3>" + name
-                 + "<div id='addRM'>&#x2716;</div></h3>"
+               + "<img src='"+img+"'><h4>" + name
+                 + "<div id='addRM'>&#x2716;</div></h4>"
                    + " <p>" + summary + "</p></button></li>";
     return html;
 };
