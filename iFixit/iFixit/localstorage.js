@@ -1,16 +1,95 @@
-// There's also a second object called sessionStorage available,
-// which works the same way, but clears when the window is closed.
+var iDevice = function (name, summary, img) {
+    this.name = name;
+    this.summary = summary;
+    this.img = img;
+    this.html = "";
+};
 
-if (!localStorage.checkins) localStorage.checkins = JSON.stringify([]);
+var GearBag = function () {
+    this.myGearBag = openDatabase('mydb', '1.0', 'Test DB', 2 * 1024 * 1024);
+};
 
-this.db = openDatabase('gear bag', 1.0, 'iFixit Grab Bag', 20);
-this.db.transaction(function (tx) {
-    tx.executeSql("create table if not exists " +
-        "checkins(id integer primary key asc, time integer, latitude float," +
-        "longitude float, mood string)",
-        [],
-        function() { console.log("look, we have storage?"); }
-    );
-});
+GearBag.prototype.create = function () {
+    this.myGearBag.transaction(function (tx) {
+        tx.executeSql(
+            'CREATE TABLE IF NOT EXISTS GEAR (' +
+            'name TEXT UNIQUE, summary TEXT, img TEXT, show BOOLEAN NOT NULL DEFAULT FALSE)', [],
+            function (tx, results) { console.log("Successfully Created")},
+            function (tx, error) { console.log("Error, could not create")}
+        );
+    });
+};
+GearBag.prototype.add = function (name, summary, img) {
+    this.myGearBag.transaction(function (tx) {
+        tx.executeSql(
+            'INSERT INTO GEAR (name, summary, img) '+
+            'VALUES (?, ?, ?)', [name, summary, img],
+            function (tx, results) { console.log("Successfully Inserted")},
+            function (tx, error) { console.log("Error, could not insert")}
+        );
+    });
+};
+
+GearBag.prototype.showHide = function (name, b) {
+    this.myGearBag.transaction(function (tx) {
+        tx.executeSql(
+            'UPDATE GEAR SET show =? where NAME =?', [b, name],
+            function (tx, results) { console.log("Successfully Updated")},
+            function (tx, error) { console.log("Error, could not update")}
+        );
+    });
+};
+
+GearBag.prototype.listAll = function () {
+    this.myGearBag.transaction(function (tx) {
+        tx.executeSql('SELECT * FROM GEAR WHERE show = "TRUE"', [], function (tx, results) {
+            var len = results.rows.length, i;
+            console.log("Found rows: " + len);
+            var output="<ul>";
+            for(i = 0; i < len; i++){
+                myDev = results.rows.item(i);
+                output += createBagHTML(myDev.name, myDev.summary, myDev.img);
+            }
+            output+="</ul>";
+            $('myBag').html(output)},
+            function (tx, results) { console.log("Successfully Listed")},
+            function (tx, error) { console.log("Error, could not list")});
+    }, null);
+};
+
+GearBag.prototype.remove = function (name, summary, img) {
+    this.myGearBag.transaction(function (tx) {
+        tx.executeSql(
+            'DELETE FROM GEAR WHERE name=? and summary=? and img=?', [name, summary, img],
+            function (tx, results) { console.log("Successfully Removed")},
+            function (tx, error) { console.log("Error, could not remove")}
+        );
+    });
+};
+
+GearBag.prototype.removeAll = function () {
+    this.myGearBag.transaction(function (tx) {
+        tx.executeSql(
+            'DELETE FROM GEAR', [],
+            function (tx, results) { console.log("Successfully Removed All")},
+            function (tx, error) { console.log("Error, could not remove all")}
+        );
+    });
+};
+
+GearBag.prototype.dropTable = function () {
+    this.myGearBag.transaction(function (tx) {
+        tx.executeSql(
+            'DROP TABLE GEAR', [],
+            function (tx, results) { console.log("Successfully Dropped")},
+            function (tx, error) { console.log("Error, could not drop")}
+        );
+    });
+};
+
+
+
+
+
 
 

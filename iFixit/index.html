@@ -9,38 +9,51 @@
     <link rel="stylesheet" href="css/foundation.css">
     <link rel="stylesheet" href="iFixit/app.css">
 
-    <!--<script src="app.js"></script>-->
-    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.2.min.js"></script>
-    <script type="text/javascript" src="http://use.typekit.com/oya4cmx.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-
-  </head>
-
-  <body>
-    <div class="container">
-      <header>
-        <h1>iFixit Devices</h1>
-      </header>
-      <section id="fetch">
-        <input type="text" placeholder="Enter some text" id="searchText" />
-        <button id="search" onclick="printText()">Find some devices</button>
-      </section>
-      <section id="poster">
-      </section>
-      <div>
-        <span></span>
-        <ul id="placeholder"></ul>
-      </div>
-
-
-    </div>
-
-
+    <!--<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.2.min.js"></script>-->
+    <!--<script type="text/javascript" src="http://use.typekit.com/oya4cmx.js"></script>-->
+    <!--<script type="text/javascript">try{Typekit.load();}catch(e){}</script>-->
     <script src="js/vendor/jquery.js"></script>
     <script src="js/vendor/what-input.js"></script>
     <script src="js/vendor/foundation.js"></script>
+
     <script src="iFixit/app.js"></script>
     <script src="iFixit/localstorage.js"></script>
+    <script type="text/javascript">
+      var myGearBag = new GearBag();
+      //myGearBag.dropTable();
+      myGearBag.create();
+      //myGearBag.removeAll();
+      myGearBag.listAll();
+    </script>
+  </head>
+
+  <body>
+  <div class="row">
+        <h1 class="header">Welcome to iFixit Devices</h1>
+    </div>
+    <div class="row">
+      <div class="medium-8 columns">
+        <section id="fetch">
+          <input type="text" placeholder="Search for your device by name" id="searchText" />
+        </section>
+        <container id="items">
+          <bag><ul id="bag"></ul></bag>
+        </container>
+      </div>
+      <div class="medium-4 columns">
+        <div class="row">
+          <div class="medium-6 columns"><h5>My Bag</h5></div>
+          <div align="right" class="medium-6 columns">
+            <label><button onclick='removeAll()'>Delete All</button></label>
+          </div>
+        </div>
+        <container id="myItems">
+          <myBag><ul id="myBag"></ul></myBag>
+        </container>
+      </div>
+
+    </div>
+
     <script>
       $(document).foundation();
     </script>

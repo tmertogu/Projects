@@ -4,41 +4,28 @@
 .autocomplete-suggestions strong { font-weight: normal; color: #3399ff; }
 
 
-.device{
-    background: #d3d3d3;
+.iDevice{
+    //background: #3adb76;
+    padding:10px;
+}
+.iDevice:hover{
+    background: #8e8e8e;
+}
+.myDevice{
+    padding:10px;
+}
+.myDevice:hover{
+    background: #992617;
+}
+.header{
+    padding:10px;
+    text-align: center;
 }
 
-.items {
-    display:table;
-    list-style:none;
-    margin:0;
-    padding:0;
-    border-spacing:5px;
+.button{
+    float: right;
 }
-
-.items li {
-    display:table-row;
-    -webkit-border-radius:10px;
-    -moz-border-radius:10px;
-    border-radius:10px;
-    border:1px solid #ccc;
-    padding:5px;
-    margin:0 0 10px 0;
+.container{
+    background: #8e8e8e;
+    padding:10px;
 }
-
-.items li img {
-    display:table-cell;
-    vertical-align:top;
-}
-
-.items li span.meta {
-    display:table-cell;
-    vertical-align:top;
-    margin:0;
-    padding:0 0 0 5px;
-}
-
-.items li {
-    margin:0 0 5px 0;
-}
-

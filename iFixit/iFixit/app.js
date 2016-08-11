@@ -1,14 +1,35 @@
-function DeviceItem(name, brand, number){
-    this.name = name;
-    this.brand = brand;
-    this.number = number;
-}
-var myItem = new DeviceItem("tim", "apple", 88);
+var addItem = function (itemID) {
+    var listItem = document.getElementById(itemID);
+    myGearBag.showHide(listItem.name, "TRUE");
+    myGearBag.listAll();
+};
 
+var rmItem = function (itemID) {
+    var listItem = document.getElementById(itemID);
+    myGearBag.showHide(listItem.name, "FALSE");
+    myGearBag.listAll();
+};
 
-var printText = function () {
-    console.log(document.getElementById('searchText').value);
-}
+var removeAll = function () {
+    myGearBag.removeAll();
+    myGearBag.listAll();
+};
+
+var createHTML = function (name, summary, img) {
+    var html = "<li class='iDevice' >"
+               + "<button id='"+name+"' onclick='addItem(this.id)' name='"+name+"'>"
+                 + "<img src='"+img+"'>" + name
+                   + " <p>" + summary + "</p></button></li>";
+    return html;
+};
+
+var createBagHTML = function (name, summary, img) {
+  var html = "<li class='myDevice' >"
+             + "<button id='"+name+"' onclick='rmItem(this.id)' name='"+name+"'>"
+               + "<img src='"+img+"'>" + name
+                 + " <p>" + summary + "</p></button></li>";
+    return html;
+};
 
 $(document).ready(function () {
     var timeoutID = null;
@@ -17,8 +38,7 @@ $(document).ready(function () {
         console.log('searching for: '+queryText);
 
         var baseUrl = "https://www.ifixit.com/api/2.0";
-        var sType = "?doctypes=device";
-        var finalUrl = baseUrl + "/suggest/" + queryText + sType;
+        var finalUrl = baseUrl + "/suggest/" + queryText + "?doctypes=device";
         console.log(finalUrl);
 
         $.ajax({
@@ -26,54 +46,28 @@ $(document).ready(function () {
             url: finalUrl,
             data: "json",
             success: function (json_obj) {
-
-                console.log(json_obj);
-
                 var output="<ul>";
-                for (var i in json_obj.results)
-                {
-                    console.log(json_obj.results[i].title);
-                    output+="<li id='"+i+"'>" + json_obj.results[i].title + ",  "
-                                   + json_obj.results[i].summary + "</li>";
+                var myDev = new iDevice();
+                for (var i in json_obj.results) {
+                    myDev.name = json_obj.results[i].title;
+                    myDev.summary = json_obj.results[i].summary;
+                    myDev.img = json_obj.results[i].image.thumbnail;
+                    output += createHTML(myDev.name, myDev.summary, myDev.img);
+                    myGearBag.add(myDev.name, myDev.summary, myDev.img);
                 }
                 output+="</ul>";
-
-                $('span').html(output);
-
+                $('bag').html(output);
             },
             dataType: "json"
         });
-        
-        // $.getJSON(finalUrl,function(json){
-        //     var items = [];
-        //
-        //     $.each(json, function(key, value) {
-        //         items.push("<li id='placeholder" + key + "'>" + value + "</li>" );
-        //     });
-        //
-        //     $( "<ul/>", {
-        //         "class": "my-new-list",
-        //         html: items.join( "" )
-        //     }).appendTo( "body" );
-        //
-        //     console.log(json);
-        //     console.log(json.results)
-        //
-        //
-        //     var obj = $.parseJSON(json);
-        //     console.log(obj);
-        //     //console.log(obj[0].display_title);
-        // });
 
-    }
+    };
 
     $('#searchText').keyup(function(){
         clearTimeout(timeoutID);
         var $searchText = $(this);
         timeoutID = setTimeout(function () { findDev($searchText.val()); }, 500);
     });
-
 });
-
 
 
