@@ -74,7 +74,13 @@ h1{
     background-color: #e6e6e6; 
     border: light grey 2px solid;
 }
+p#sum{
+    //padding:100%;
+    text-align: justify;
+}
 
-#addRM:hover{
-
+p#sum:after {
+  content: "";
+  display: inline-block;
+  width: 100%;
 }
