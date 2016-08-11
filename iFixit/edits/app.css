@@ -1,0 +1,30 @@
+
+.iDevice{
+    //background: #3adb76;
+    padding:10px;
+}
+.iDevice:hover{
+    background: #33cc33;
+}
+.myDevice{
+    padding:10px;
+}
+.myDevice:hover{
+    background: #ff0000;
+}
+.header{
+    padding:10px;
+    text-align: center;
+}
+
+.button{
+    float: right;
+}
+.container{
+    background: #8e8e8e;
+    padding:10px;
+}
+.h5{
+    padding:10px;
+    text-align: center;
+}
