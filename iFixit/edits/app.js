@@ -23,7 +23,8 @@ var createHTML = function (name, summary, img) {
     var html = "<li class='iDevice' >"
                + "<button id='"+name+"' onclick='addItem(this.id)' name='"+name+"'>"
                  + "<img src='"+img+"'>" + name
-                   + " <p>" + summary + "</p></button></li>";
+                   + "<div id='addRM'>&#x2714;</div>"
+                     + " <p>" + summary + "</p></button></li>";
     return html;
 };
 
@@ -31,7 +32,8 @@ var createBagHTML = function (name, summary, img) {
   var html = "<li class='myDevice' >"
              + "<button id='"+name+"' onclick='rmItem(this.id)' name='"+name+"'>"
                + "<img src='"+img+"'>" + name
-                 + " <p>" + summary + "</p></button></li>";
+                 + "<div id='addRM'>&#x2716;</div>"
+                   + " <p>" + summary + "</p></button></li>";
     return html;
 };
 

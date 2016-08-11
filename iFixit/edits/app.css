@@ -4,22 +4,19 @@
     padding:10px;
 }
 .iDevice:hover{
-    background: #33cc33;
+    background: #ccffdd;
 }
 .myDevice{
     padding:10px;
 }
 .myDevice:hover{
-    background: #ff0000;
+    background: #ffb3b3;
 }
 .header{
     //padding:10px;
     text-align: center;
 }
 
-.button{
-    float: right;
-}
 .container{
     background: #8e8e8e;
     //padding:10px;
@@ -54,4 +51,16 @@ li{
 h1{
     background: #0071cb;
     color: #FFFFFF;
+}
+#addRM {
+    float : right;
+    display : inline-block;
+    padding: 10px; 
+    color: black; 
+    background-color: #e6e6e6; 
+    border: light grey 2px solid;
+}
+
+#addRM:hover{
+
 }
