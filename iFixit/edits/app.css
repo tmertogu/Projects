@@ -50,3 +50,8 @@ div.medium-4.columns{
 li{
     list-style-type: none;
 }
+
+h1{
+    background: #0071cb;
+    color: #FFFFFF;
+}
