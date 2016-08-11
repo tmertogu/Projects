@@ -5,7 +5,7 @@ All of the files in css/ and js/ are unaltered from Foundation-6 Complete.
 Simple Web Application using the iFixit API
 
 Specifications:
-x  1. Create an interface that is intuitive for the user to find the devices they own and associate those devices with their account (which for this project is just their current browser session). The user should be able to both add and remove devices from their “Grab Bag”.
+   1. Create an interface that is intuitive for the user to find the devices they own and associate those devices with their account (which for this project is just their current browser session). The user should be able to both add and remove devices from their “Grab Bag”.
 - The user simply clicks the device they would like to add, or remove.  The user experience is intuitive as hovering over the devices to add, changes the background color to green and hovering over the devices in the bag, changes the background color to red.
 
    2. Store the list of chosen devices locally and save the state using only client-side methods.
