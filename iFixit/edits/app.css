@@ -46,16 +46,16 @@ li {
 }
 
 .nav ul{
-    overflow:hidden; 
+    overflow:hidden;
     overflow-y:scroll;
 }
 
 div.medium-8.columns{
-   padding: 10px; 
+   padding: 10px;
 }
 
 div.medium-4.columns{
-   padding: 10px; 
+   padding: 10px;
 }
 
 li{
@@ -69,18 +69,8 @@ h1{
 #addRM {
     float : right;
     display : inline-block;
-    padding: 10px; 
-    color: black; 
-    background-color: #e6e6e6; 
+    padding: 10px;
+    color: black;
+    background-color: #e6e6e6;
     border: light grey 2px solid;
-}
-p#sum{
-    //padding:100%;
-    text-align: justify;
-}
-
-p#sum:after {
-  content: "";
-  display: inline-block;
-  width: 100%;
 }
