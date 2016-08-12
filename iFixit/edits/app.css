@@ -31,10 +31,6 @@
     background: transparent
 }
 
-ul {
-  list-style-type: none;
-}
-
 li img{
     float: left;
     margin: 0 15px 0 0;
@@ -56,10 +52,6 @@ div.medium-8.columns{
 
 div.medium-4.columns{
    padding: 10px;
-}
-
-li{
-    list-style-type: none;
 }
 
 h1{

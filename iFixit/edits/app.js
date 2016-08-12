@@ -22,18 +22,22 @@ var removeAll = function () {
 var createHTML = function (name, summary, img) {
     var html = "<li class='iDevice' >"
                + "<button id='"+name+"' onclick='addItem(this.id)' name='"+name+"'>"
-                 + "<img src='"+img+"'><h4>" + name
-                   + "<div id='addRM'>&#x2714;</div></h4>"
-                     + " <p>" + summary + "</p></button></li>";
+                 + "<div class='row'><div class='medium-4 columns'>"
+                   + "<img src='"+img+"'></div><div class='medium-8 columns'><h4>"
+                     + name + "<div id='addRM'>&#x2714;</div></h4></div></div>"
+                       + " <div class='medium-12 columns'><p>" + summary
+                         + "</p></div></button></li>";
     return html;
 };
 
 var createBagHTML = function (name, summary, img) {
   var html = "<li class='myDevice' >"
              + "<button id='"+name+"' onclick='rmItem(this.id)' name='"+name+"'>"
-               + "<img src='"+img+"'><h4>" + name
-                 + "<div id='addRM'>&#x2716;</div></h4>"
-                   + " <p>" + summary + "</p></button></li>";
+               + "<div class='row'><div class='medium-4 columns'>"
+                 + "<img src='"+img+"'></div><div class='medium-8 columns'><h4>"
+                   + name + "<div id='addRM'>&#x2716;</div></h4></div></div>"
+                     + " <div class='medium-12 columns'><p>" + summary
+                       + "</p></div></button></li>";
     return html;
 };
 
