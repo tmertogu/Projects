@@ -16,6 +16,7 @@
 
 h4{
     text-align: center;
+    min-width: 283px;
 }
 
 ul {
@@ -25,6 +26,8 @@ ul {
 li img{
     float: left;
     margin: 5px;
+    min-width: 219px;
+    min-height: 164px;
 }
 
 .nav ul{
@@ -56,4 +59,8 @@ h1{
     background-color: #e6e6e6;
     border: light grey 2px solid;
     margin: 5px;
+}
+
+row {
+    width:100%;
 }
