@@ -1,40 +1,27 @@
 
 .iDevice{
-    //background: #3adb76;
-    padding:10px;
     border-bottom: 1px solid #8e8e8e
 }
 .iDevice:hover{
     background: #ccffdd;
 }
 .myDevice{
-    padding:10px;
     border-bottom: 1px solid #8e8e8e
 }
 .myDevice:hover{
     background: #ffb3b3;
 }
 .header{
-    //padding:10px;
     text-align: center;
 }
 
 .container{
     background: #8e8e8e;
-    //padding:10px;
-}
-.h5{
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    font-size: 100%;
-    vertical-align: baseline;
-    background: transparent
 }
 
 ul {
   background: #cce8ff;
+  list-style-type:none;
 }
 
 li img{
@@ -43,8 +30,7 @@ li img{
 }
 
 li {
-  padding: 10px;
-  overflow: auto;
+  padding-top: 10px;
 }
 
 .nav ul{
@@ -53,11 +39,15 @@ li {
 }
 
 div.medium-8.columns{
-   padding: 10px;
+   padding-top: 10px;
 }
 
 div.medium-4.columns{
-   padding: 10px;
+   padding-top: 10px;
+}
+
+div.medium-12.columns{
+   padding-top: 10px;
 }
 
 h1{
@@ -67,7 +57,7 @@ h1{
 #addRM {
     float : right;
     display : inline-block;
-    padding: 10px;
+    padding-top: 10px;
     color: black;
     background-color: #e6e6e6;
     border: light grey 2px solid;
