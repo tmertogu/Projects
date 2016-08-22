@@ -49,7 +49,7 @@ GearBag.prototype.listAll = function () {
             var output="<ul>";
             for(i = 0; i < len; i++){
                 myDev = results.rows.item(i);
-                output += createBagHTML(myDev.name, myDev.summary, myDev.img);
+                output += createBagHTML(myDev.name, myDev.img);
             }
             output+="</ul>";
             $('myBag').html(output)},

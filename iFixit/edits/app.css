@@ -14,9 +14,12 @@
     text-align: center;
 }
 
+h4{
+    text-align: center;
+}
+
 ul {
-  background: #cce8ff;
-  list-style-type:none;
+    list-style-type:none;
 }
 
 li img{
@@ -47,9 +50,10 @@ h1{
 }
 #addRM {
     float : right;
-    display : inline-block;
+    right: 0;
     padding: 2px;
     color: black;
     background-color: #e6e6e6;
     border: light grey 2px solid;
+    margin: 5px;
 }
