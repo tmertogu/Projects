@@ -81,7 +81,7 @@ GearBag.prototype.removeHidden = function () {
 GearBag.prototype.removeAll = function () {
     this.myGearBag.transaction(function (tx) {
         tx.executeSql(
-            'DELETE FROM GEAR', [],
+            'UPDATE GEAR SET show = "FALSE" where show = "TRUE"', [],
             function (tx, results) { console.log("Successfully Removed All")},
             function (tx, error) { console.log("Error, could not remove all")}
         );
