@@ -24,7 +24,7 @@ var createHTML = function (name, summary, img) {
             + "<button id='"+name+"' onclick='addItem(this.id)' name='"+name+"'>"
               + "<div class='row'>"
                 +"<div class='medium-4 columns'>"
-                  + "<img src='"+img+"'>"
+                  + "<img id='i' src='"+img+"'>"
                 + "</div>"
                 + "<div class='medium-8 columns'>"
                   + "<div class='medium-8 columns'>"
