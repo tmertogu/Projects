@@ -20,7 +20,6 @@ html, body {
 
 h4{
   text-align: center;
-  min-width: 283px;
 }
 
 ul { 
@@ -30,8 +29,6 @@ ul {
 li img{
   float: left;
   margin: 5px;
-  min-width: 219px;
-  min-height: 164px;
 }
 
 .medium-8.columns, .medium-4.columns, .medium-12.columns{
