@@ -26,18 +26,25 @@ var createHTML = function (name, summary, img) {
                 +"<div class='medium-4 columns'>"
                   + "<img id='i' src='"+img+"'>"
                 + "</div>"
+
                 + "<div class='medium-8 columns'>"
-                  + "<div class='medium-8 columns'>"
-                    + "<h4 id='i'>" + name + "</h4>"
+                  + "<div class='row'>"
+
+                    + "<div class='medium-8 columns'>"
+                      + "<h4 id='i'>" + name + "</h4>"
+                    + "</div>"
+                    + "<div class='medium-4 columns'>"
+                      + "<div id='addRM'>&#x2714;</div>"
+                    + "</div>"
+
                   + "</div>"
-                  + "<div class='medium-4 columns'>"
-                    + "<div id='addRM'>&#x2714;</div>"
-                  + "</div>"
+
                   + "<div class='row'>"
                     + "<div class='medium-12 columns'>"
                       + " <p>" + summary + "</p>"
                     + "</div>"
                   + "</div>"
+
                 + "</div>"
               + "</div>"
             +"</button></li>";

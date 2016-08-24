@@ -5,6 +5,7 @@ html, body {
 }
 
 .iDevice, .myDevice{
+  margin: 1px;
   border: 1px solid #8e8e8e
 }
 .iDevice:hover{
@@ -32,7 +33,7 @@ li img{
 }
 
 .medium-8.columns, .medium-4.columns, .medium-12.columns{
-  padding-top: 10px;
+  padding-top: 5px;
 }
 
 h1{
@@ -41,11 +42,10 @@ h1{
 }
 #addRM {
   float : right;
-  right: 0;
   padding: 2px;
   color: black;
   background-color: #e6e6e6;
-  border: light grey 2px solid;
+  border: grey 2px solid;
   margin: 5px;
 }
 
@@ -61,7 +61,10 @@ main {
   overflow-y: scroll;
   height: 100vh;
   padding-bottom: 10px;
+  margin: 1px;
 }
 
-
-
+/*.row {
+  border: green 2px solid;
+  margin: 2px;
+}*/
