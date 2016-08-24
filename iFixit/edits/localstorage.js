@@ -23,7 +23,8 @@ GearBag.prototype.add = function (name, summary, img) {
     this.myGearBag.transaction(function (tx) {
         tx.executeSql(
             'INSERT INTO GEAR (name, summary, img) '+
-            'VALUES (?, ?, ?)', [name, summary, img],
+            'SELECT ?, ?, ?  WHERE NOT EXISTS ( '+
+            'SELECT * FROM GEAR WHERE name = ?)', [name, summary, img, name],
             function (tx, results) { console.log("Successfully Inserted")},
             function (tx, error) { console.log("Error, could not insert")}
         );
@@ -49,7 +50,7 @@ GearBag.prototype.listAll = function () {
             var output="<ul>";
             for(i = 0; i < len; i++){
                 myDev = results.rows.item(i);
-                output += createBagHTML(myDev.name, myDev.summary, myDev.img);
+                output += createBagHTML(myDev.name, myDev.img);
             }
             output+="</ul>";
             $('myBag').html(output)},
