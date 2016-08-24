@@ -21,33 +21,32 @@ var removeAll = function () {
 
 var createHTML = function (name, summary, img) {
     var html = "<li class='iDevice' >"
-            + "<button id='"+name+"' onclick='addItem(this.id)' name='"+name+"'>"
-              + "<div class='row'>"
-                +"<div class='medium-4 columns'>"
-                  + "<img id='i' src='"+img+"'>"
-                + "</div>"
-
-                + "<div class='medium-8 columns'>"
-                  + "<div class='row'>"
-
-                    + "<div class='medium-8 columns'>"
-                      + "<h4 id='i'>" + name + "</h4>"
-                    + "</div>"
-                    + "<div class='medium-4 columns'>"
-                      + "<div id='addRM'>&#x2714;</div>"
-                    + "</div>"
-
+              + "<button id='"+name+"' onclick='addItem(this.id)' name='"+name+"'>"
+                + "<div class='row'>"
+                  +"<div class='medium-4 columns'>"
+                    + "<img id='i' src='"+img+"'>"
                   + "</div>"
-
-                  + "<div class='row'>"
-                    + "<div class='medium-12 columns'>"
-                      + " <p>" + summary + "</p>"
+                  + "<div class='medium-8 columns'>"
+                    + "<div class='row'>"
+                      + "<div class='medium-8 columns'>"
+                        + "<h4 id='i'>" + name + "</h4>"
+                      + "</div>"
+                      + "<div class='medium-4 columns'>"
+                        + "<div id='addRM'>&#x2714;</div>"
+                      + "</div>"
+                    + "</div>"
+                    + "<div class='row'>"
+                      + "<div class='medium-12 columns'>"
+                        + " <p>" + summary + "</p>"
+                        + "<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"
+                           + "&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"
+                           + "&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;"
+                           + "&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</p>"
+                      + "</div>"
                     + "</div>"
                   + "</div>"
-
                 + "</div>"
-              + "</div>"
-            +"</button></li>";
+              +"</button></li>";
     return html;
 };
 
