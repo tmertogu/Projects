@@ -22,10 +22,10 @@ var removeAll = function () {
 var createHTML = function (name, summary, img) {
     var html = "<li class='iDevice' >"
               + "<div class='row'>"
-                +"<div class='medium-4 columns'>"
+                +"<div class='medium-4 small-6 columns'>"
                   + "<img id='i' src='"+img+"'>"
                 + "</div>"
-                + "<div class='medium-8 columns'>"
+                + "<div class='medium-8 small-6 columns'>"
                   + "<div class='row'>"
                     + "<div class='medium-10 columns'>"
                       + "<h4 id='i'>" + name + "</h4>"
