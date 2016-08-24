@@ -1,66 +1,70 @@
-.iDevice{
-    border-bottom: 1px solid #8e8e8e
+html, body { 
+  height: 100%; 
+  margin: 0; 
+  padding: 0; 
+}
+
+.iDevice, .myDevice{
+  border: 1px solid #8e8e8e
 }
 .iDevice:hover{
-    background: #ccffdd;
-}
-.myDevice{
-    border-bottom: 1px solid #8e8e8e
+  background: #ccffdd;
 }
 .myDevice:hover{
-    background: #ffb3b3;
+  background: #ffb3b3;
 }
+
 .header{
-    text-align: center;
+  text-align: center;
 }
 
 h4{
-    text-align: center;
-    min-width: 283px;
+  text-align: center;
+  min-width: 283px;
 }
 
-ul {
-    list-style-type:none;
+ul { 
+  list-style-type:none; 
 }
 
 li img{
-    float: left;
-    margin: 5px;
-    min-width: 219px;
-    min-height: 164px;
+  float: left;
+  margin: 5px;
+  min-width: 219px;
+  min-height: 164px;
 }
 
-.nav ul{
-    overflow:hidden;
-    overflow-y:scroll;
-}
-
-div.medium-8.columns{
-   padding-top: 10px;
-}
-
-div.medium-4.columns{
-   padding-top: 10px;
-}
-
-div.medium-12.columns{
-   padding-top: 10px;
+.medium-8.columns, .medium-4.columns, .medium-12.columns{
+  padding-top: 10px;
 }
 
 h1{
-    background: #0071cb;
-    color: #FFFFFF;
+  background: #0071cb;
+  color: #FFFFFF;
 }
 #addRM {
-    float : right;
-    right: 0;
-    padding: 2px;
-    color: black;
-    background-color: #e6e6e6;
-    border: light grey 2px solid;
-    margin: 5px;
+  float : right;
+  right: 0;
+  padding: 2px;
+  color: black;
+  background-color: #e6e6e6;
+  border: light grey 2px solid;
+  margin: 5px;
 }
 
-row {
-    width:100%;
+head {
+  height: 20%;
 }
+
+main {
+  height: 80%; 
+}
+#scrollable {
+  overflow-y: scroll;
+  overflow-x: scroll;
+  height: 80vh;
+  padding-bottom: 10px;
+}
+
+
+
