@@ -61,7 +61,7 @@ main {
 }
 #scrollable {
   overflow-y: scroll;
-  height: 100vh;
+  height: 80vh;
   padding-bottom: 10px;
 }
 
