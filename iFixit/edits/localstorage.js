@@ -13,18 +13,20 @@ GearBag.prototype.create = function () {
     this.myGearBag.transaction(function (tx) {
         tx.executeSql(
             'CREATE TABLE IF NOT EXISTS GEAR (' +
-            'name TEXT UNIQUE, summary TEXT, img TEXT, show BOOLEAN NOT NULL DEFAULT FALSE)', [],
+            'name TEXT UNIQUE, summary TEXT, img TEXT, ' +
+            'show BOOLEAN NOT NULL DEFAULT FALSE, date TEXT)', [],
             function (tx, results) { console.log("Successfully Created")},
             function (tx, error) { console.log("Error, could not create")}
         );
     });
 };
 GearBag.prototype.add = function (name, summary, img) {
+    var d = new Date();
     this.myGearBag.transaction(function (tx) {
         tx.executeSql(
-            'INSERT INTO GEAR (name, summary, img) '+
-            'SELECT ?, ?, ?  WHERE NOT EXISTS ( '+
-            'SELECT * FROM GEAR WHERE name = ?)', [name, summary, img, name],
+            'INSERT INTO GEAR (name, summary, img, date) '+
+            'SELECT ?, ?, ?, ?  WHERE NOT EXISTS ( '+
+            'SELECT * FROM GEAR WHERE name = ?)', [name, summary, img, d.getTime(), name],
             function (tx, results) { console.log("Successfully Inserted")},
             function (tx, error) { console.log("Error, could not insert")}
         );
@@ -32,9 +34,10 @@ GearBag.prototype.add = function (name, summary, img) {
 };
 
 GearBag.prototype.showHide = function (name, b) {
+    var d = new Date();
     this.myGearBag.transaction(function (tx) {
         tx.executeSql(
-            'UPDATE GEAR SET show =? where NAME =?', [b, name],
+            'UPDATE GEAR SET show =?, date=? where NAME =?', [b, d.getTime(), name],
             function (tx, results) { console.log("Successfully Updated")},
             function (tx, error) { console.log("Error, could not update")}
         );
@@ -43,7 +46,7 @@ GearBag.prototype.showHide = function (name, b) {
 
 GearBag.prototype.listAll = function () {
     this.myGearBag.transaction(function (tx) {
-        tx.executeSql('SELECT * FROM GEAR WHERE show = "TRUE" ORDER BY rowid DESC',
+        tx.executeSql('SELECT * FROM GEAR WHERE show = "TRUE" ORDER BY date DESC',
             [], function (tx, results) {
             var len = results.rows.length, i;
             console.log("Found rows: " + len);

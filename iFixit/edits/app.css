@@ -24,6 +24,7 @@ ul {
 li img{
   float: left;
   margin: 5px;
+  padding: 5px;
 }
 
 .medium-8.columns, .medium-4.columns, .medium-12.columns{
@@ -56,6 +57,7 @@ head {
 
 main {
   height: 80%; 
+  overflow-x: hidden;
 }
 #scrollable {
   overflow-y: scroll;
@@ -67,5 +69,6 @@ main {
 
 p {
   text-align:left;
+  padding: 5px;
 }
 
