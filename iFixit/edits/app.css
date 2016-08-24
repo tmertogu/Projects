@@ -56,7 +56,6 @@ head {
 
 main {
   height: 80%; 
-  overflow-y: hidden;
 }
 #scrollable {
   overflow-y: scroll;
