@@ -19,7 +19,7 @@ html, body {
   text-align: center;
 }
 
-h4{
+h4, h5{
   text-align: center;
 }
 
@@ -40,13 +40,14 @@ h1{
   background: #0071cb;
   color: #FFFFFF;
 }
-#addRM {
+div#R button {
   float : right;
   padding: 2px;
   color: black;
   background-color: #e6e6e6;
   border: grey 2px solid;
   margin: 5px;
+  text-align: right;
 }
 
 head {
@@ -67,3 +68,4 @@ main {
 p {
   text-align:left;
 }
+
