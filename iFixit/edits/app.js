@@ -21,17 +21,20 @@ var removeAll = function () {
 
 var createHTML = function (name, summary, img) {
     var html = "<li class='iDevice' >"
-            + "<button id='"+name+"' onclick='addItem(this.id)' name='"+name+"'>"
               + "<div class='row'>"
                 +"<div class='medium-4 columns'>"
                   + "<img id='i' src='"+img+"'>"
                 + "</div>"
                 + "<div class='medium-8 columns'>"
-                  + "<div class='medium-8 columns'>"
-                    + "<h4 id='i'>" + name + "</h4>"
-                  + "</div>"
-                  + "<div class='medium-4 columns'>"
-                    + "<div id='addRM'>&#x2714;</div>"
+                  + "<div class='row'>"
+                    + "<div class='medium-10 columns'>"
+                      + "<h4 id='i'>" + name + "</h4>"
+                    + "</div>"
+                    + "<div class='medium-2 columns' id='R'>"
+                      + "<h4><button id='"+name+"' onclick='addItem(this.id)' name='"
+                        + name +"'>&#x2714;"
+                      + "</button></h4>"
+                    + "</div>"
                   + "</div>"
                   + "<div class='row'>"
                     + "<div class='medium-12 columns'>"
@@ -40,29 +43,30 @@ var createHTML = function (name, summary, img) {
                   + "</div>"
                 + "</div>"
               + "</div>"
-            +"</button></li>";
+            +"</li>";
     return html;
 };
 
 var createBagHTML = function (name, img) {
   var html = "<li class='myDevice' >"
-            + "<button id='"+name+"' onclick='rmItem(this.id)' name='"+name+"'>"
-              + "<div class='row'>"
-                + "<div class='medium-12 columns'>"
-                  + "<div class='medium-8 columns'>"
-                    + "<h5>" + name + "</h5>"
-                  + "</div>"
-                  + "<div class='medium-4 columns end'>"
-                    + "<div id='addRM'>&#x2716;</div>"
-                  + "</div>"
+            + "<div class='row'>"
+              + "<div class='medium-12 columns'>"
+                + "<div class='medium-10 columns'>"
+                  + "<h5>" + name + "</h5>"
+                + "</div>"
+                + "<div class='medium-2 columns' id='R'>"
+                  + "<h5><button id='"+name+"' onclick='rmItem(this.id)' name='"
+                    + name +"'>&#x2716;"
+                  + "</button></h5>"
                 + "</div>"
               + "</div>"
-              + "<div class='row'>"
-                +"<div class='medium-12 columns'>"
-                  + "<img src='"+img+"'>"
-                + "</div>"
+            + "</div>"
+            + "<div class='row'>"
+              +"<div class='medium-12 columns'>"
+                + "<img src='"+img+"'>"
               + "</div>"
-            +"</button></li>";
+            + "</div>"
+          + "</li>";
     return html;
 };
 

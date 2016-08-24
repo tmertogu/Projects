@@ -5,22 +5,16 @@ html, body {
 }
 
 .iDevice, .myDevice{
+  margin: 1px;
   border: 1px solid #8e8e8e
-}
-.iDevice:hover{
-  background: #ccffdd;
-}
-.myDevice:hover{
-  background: #ffb3b3;
 }
 
 .header{
   text-align: center;
 }
 
-h4{
+h4, h5{
   text-align: center;
-  min-width: 283px;
 }
 
 ul { 
@@ -30,26 +24,30 @@ ul {
 li img{
   float: left;
   margin: 5px;
-  min-width: 219px;
-  min-height: 164px;
 }
 
 .medium-8.columns, .medium-4.columns, .medium-12.columns{
-  padding-top: 10px;
+  padding-top: 5px;
 }
 
 h1{
   background: #0071cb;
   color: #FFFFFF;
 }
-#addRM {
+div#R button {
   float : right;
-  right: 0;
   padding: 2px;
   color: black;
   background-color: #e6e6e6;
-  border: light grey 2px solid;
+  border: grey 2px solid;
   margin: 5px;
+  text-align: right;
+}
+.iDevice div#R button:hover {
+  background: #4dff88;
+}
+.myDevice div#R button:hover {
+  background: #ff4d4d;
 }
 
 head {
@@ -63,7 +61,10 @@ main {
   overflow-y: scroll;
   height: 80vh;
   padding-bottom: 10px;
+  margin: 1px;
 }
 
-
+p {
+  text-align:left;
+}
 
