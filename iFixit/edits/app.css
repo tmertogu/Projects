@@ -1,74 +1,71 @@
+html, body { 
+  height: 100%; 
+  margin: 0; 
+  padding: 0; 
+}
 
-.iDevice{
-    //background: #3adb76;
-    padding:10px;
-    border-bottom: 1px solid #8e8e8e
+.iDevice, .myDevice{
+  margin: 1px;
+  border: 1px solid #8e8e8e
 }
 .iDevice:hover{
-    background: #ccffdd;
-}
-.myDevice{
-    padding:10px;
-    border-bottom: 1px solid #8e8e8e
+  background: #ccffdd;
 }
 .myDevice:hover{
-    background: #ffb3b3;
+  background: #ffb3b3;
 }
+
 .header{
-    //padding:10px;
-    text-align: center;
+  text-align: center;
 }
 
-.container{
-    background: #8e8e8e;
-    //padding:10px;
-}
-.h5{
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    font-size: 100%;
-    vertical-align: baseline;
-    background: transparent
+h4, h5{
+  text-align: center;
 }
 
-ul {
-  background: #cce8ff;
+ul { 
+  list-style-type:none; 
 }
 
 li img{
-    float: left;
-    margin: 5px;
+  float: left;
+  margin: 5px;
 }
 
-li {
-  padding: 10px;
-  overflow: auto;
-}
-
-.nav ul{
-    overflow:hidden;
-    overflow-y:scroll;
-}
-
-div.medium-8.columns{
-   padding: 10px;
-}
-
-div.medium-4.columns{
-   padding: 10px;
+.medium-8.columns, .medium-4.columns, .medium-12.columns{
+  padding-top: 5px;
 }
 
 h1{
-    background: #0071cb;
-    color: #FFFFFF;
+  background: #0071cb;
+  color: #FFFFFF;
 }
-#addRM {
-    float : right;
-    display : inline-block;
-    padding: 10px;
-    color: black;
-    background-color: #e6e6e6;
-    border: light grey 2px solid;
+div#R button {
+  float : right;
+  padding: 2px;
+  color: black;
+  background-color: #e6e6e6;
+  border: grey 2px solid;
+  margin: 5px;
+  text-align: right;
 }
+
+head {
+  height: 20%;
+}
+
+main {
+  height: 80%; 
+  overflow-y: hidden;
+}
+#scrollable {
+  overflow-y: scroll;
+  height: 100vh;
+  padding-bottom: 10px;
+  margin: 1px;
+}
+
+p {
+  text-align:left;
+}
+
