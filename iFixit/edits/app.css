@@ -20,6 +20,10 @@ ul {
   list-style-type:none; 
 }
 
+li.odd {
+  background-color: #e6e6e6;
+}
+
 li img{
   float: left;
   margin: 1px;
