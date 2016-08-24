@@ -47,11 +47,11 @@ div#R button {
 }
 
 head {
-  height: 20%;
+  height: 19%;
 }
 
 main {
-  height: 80%; 
+  height: 79%; 
   overflow-x: hidden;
 }
 #scrollable {

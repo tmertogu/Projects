@@ -48,11 +48,11 @@
         </div>
       </div>
       <div class="row">
-        <div class="medium-8 small-8 columns" style="padding-top: 15px;">
+        <div class="medium-8 small-12 columns" style="padding-top: 15px;">
           <input type="text" style="border: 1px solid #8e8e8e;" 
                  placeholder="Search for your device by name" id="searchText" />
         </div>
-        <div class="medium-4 small-4 columns" style="padding-top: 15px;">
+        <div class="medium-4 hide-for-small-only columns" style="padding-top: 15px;">
           <div class="top-bar" style="border: 1px solid #8e8e8e;">
             <div class="top-bar-right">
               <a href="#"><button onclick='removeAll()'>Delete All</button></a>
@@ -64,12 +64,19 @@
 
     <main>
       <div class="row">
-        <div class="medium-8 small-8 columns">
+        <div class="medium-8 small-12 columns">
           <div id="scrollable">
             <bag class="items"><ul id="bag"></ul></bag>
           </div>
         </div>
-        <div class="medium-4 small-4 columns">
+        <div class="small-12 show-for-small-only columns" style="padding-top: 15px;">
+          <div class="top-bar" style="border: 1px solid #8e8e8e;">
+            <div class="top-bar-right">
+              <a href="#"><button onclick='removeAll()'>Delete All</button></a>
+            </div>
+          </div>
+        </div>
+        <div class="medium-4 small-12 columns">
           <div id="scrollable">
             <myBag class="items"><ul id="myBag"></ul></myBag>
           </div>
