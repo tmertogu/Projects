@@ -8,12 +8,6 @@ html, body {
   margin: 1px;
   border: 1px solid #8e8e8e
 }
-.iDevice:hover{
-  background: #ccffdd;
-}
-.myDevice:hover{
-  background: #ffb3b3;
-}
 
 .header{
   text-align: center;
@@ -48,6 +42,12 @@ div#R button {
   border: grey 2px solid;
   margin: 5px;
   text-align: right;
+}
+.iDevice div#R button:hover {
+  background: #4dff88;
+}
+.myDevice div#R button:hover {
+  background: #ff4d4d;
 }
 
 head {
