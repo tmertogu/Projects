@@ -16,7 +16,7 @@ var rmItem = function (itemID) {
 
 var removeAll = function () {
     myGearBag.removeAll();
-    myGearBag.listAll();
+    myGearBag.listAll(); 
 };
 
 var createHTML = function (name, summary, img) {
