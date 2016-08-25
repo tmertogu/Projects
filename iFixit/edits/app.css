@@ -1,70 +1,74 @@
 html, body { 
-  height: 100%; 
-  margin: 0; 
-  padding: 0; 
+  height: 98%; 
+  margin: 0px; 
+  padding: 1px; 
 }
 
 .iDevice, .myDevice{
-  border: 1px solid #8e8e8e
-}
-.iDevice:hover{
-  background: #ccffdd;
-}
-.myDevice:hover{
-  background: #ffb3b3;
+  border-bottom: 1px solid #cccccc;
 }
 
 .header{
   text-align: center;
 }
 
-h4{
+h4, h5{
   text-align: center;
-  min-width: 283px;
 }
 
 ul { 
   list-style-type:none; 
+  margin: 0px;
+  padding: 0px;
+}
+li { 
+  margin: 0px;
+  padding: 0px;
 }
 
 li img{
   float: left;
-  margin: 5px;
-  min-width: 219px;
-  min-height: 164px;
-}
-
-.medium-8.columns, .medium-4.columns, .medium-12.columns{
-  padding-top: 10px;
+  margin: 1px;
+  padding: 1px;
 }
 
 h1{
   background: #0071cb;
-  color: #FFFFFF;
+  color: #e6e6e6;
 }
-#addRM {
+div#R button {
   float : right;
-  right: 0;
-  padding: 2px;
+  padding: 5px;
   color: black;
   background-color: #e6e6e6;
-  border: light grey 2px solid;
+  border: grey 2px solid;
   margin: 5px;
+  text-align: right;
+}
+.iDevice div#R button:hover {
+  background: #4dff88;
+}
+.myDevice div#R button:hover {
+  background: #ff4d4d;
 }
 
 head {
-  height: 20%;
+  height: 19%;
 }
 
 main {
-  height: 80%; 
+  height: 79%; 
+  overflow-x: hidden;
 }
 #scrollable {
   overflow-y: scroll;
-  overflow-x: scroll;
-  height: 80vh;
-  padding-bottom: 10px;
+  overflow-x: hidden;
+  height: 75vh;
+  border: 1px solid #8e8e8e;
 }
 
-
+p {
+  text-align:left;
+  padding: 5px;
+}
 
