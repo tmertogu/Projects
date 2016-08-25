@@ -20,7 +20,7 @@ var removeAll = function () {
 };
 
 var createHTML = function (name, summary, img) {
-  var html = "<li class='iDevice' >"
+  var html = "<li class='iDevice'>"
             + "<div class='row'>"
               +"<div class='large-4 medium-6 small-12 columns'>"
                 + "<img id='i' src='"+img+"'>"
@@ -48,7 +48,7 @@ var createHTML = function (name, summary, img) {
 };
 
 var createBagHTML = function (name, img) {
-  var html = "<li class='myDevice' >"
+  var html = "<li class='myDevice'>"
             + "<div class='row'>"
               + "<div class='medium-10 small-11 columns'>"
                 + "<h5>" + name + "</h5>"

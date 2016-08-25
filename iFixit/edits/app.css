@@ -5,7 +5,7 @@ html, body {
 }
 
 .iDevice, .myDevice{
-  border-bottom: 1px solid #8e8e8e;
+  border-bottom: 1px solid #cccccc;
 }
 
 .header{
@@ -18,10 +18,12 @@ h4, h5{
 
 ul { 
   list-style-type:none; 
+  margin: 0px;
+  padding: 0px;
 }
-
-li.odd {
-  background-color: #e6e6e6;
+li { 
+  margin: 0px;
+  padding: 0px;
 }
 
 li img{
