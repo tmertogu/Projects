@@ -1,3 +1,8 @@
+* {
+  font-family: "Lato",Arial,sans-serif;
+  background: transparent;
+}
+
 html, body { 
   height: 98%; 
   margin: 0px; 
