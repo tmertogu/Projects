@@ -4,13 +4,20 @@ document.addEventListener("offline", function() {
 
 var addItem = function (itemID) {
     var listItem = document.getElementById(itemID);
-    myGearBag.showHide(listItem.name, "TRUE");
+
+    var name = listItem.id;
+    //console.log(name);
+    var summary = listItem.getElementsByTagName("p")[0].innerText;
+    //console.log(summary);
+    var img = listItem.getElementsByTagName("img")[0].currentSrc;
+    //console.log(img);
+    myGearBag.add(name, summary, img);
     myGearBag.listAll();
 };
 
 var rmItem = function (itemID) {
     var listItem = document.getElementById(itemID);
-    myGearBag.showHide(listItem.name, "FALSE");
+    myGearBag.remove(listItem.id);
     myGearBag.listAll();
 };
 
@@ -19,50 +26,53 @@ var removeAll = function () {
     myGearBag.listAll();
 };
 
-var createHTML = function (name, summary, img) {
-    var html = "<li class='iDevice' >"
-            + "<button id='"+name+"' onclick='addItem(this.id)' name='"+name+"'>"
-              + "<div class='row'>"
-                +"<div class='medium-4 columns'>"
-                  + "<img id='i' src='"+img+"'>"
+var createHTML = function (name, summary, img, i) {
+  //console.log("i: "+i);
+  var html = "<li class='iDevice' id='"+name+"'>"
+            + "<div class='row'>"
+              +"<div class='large-4 medium-6 small-12 columns'>"
+                + "<img src='"+img+"'>"
+              + "</div>"
+              + "<div class='large-8 medium-6 small-12 columns'>"
+                + "<div class='row'>"
+                  + "<div class='medium-10 small-10 columns'>"
+                    + "<h4>" + name + "</h4>"
+                  + "</div>"
+                  + "<div class='medium-2 small-2 columns' id='R'>"
+                    + "<h4><button onclick='addItem(this.name)' name='"
+                      + name +"' summary='SUM'>&#x2714;"
+                    + "</button></h4>"
+                  + "</div>"
                 + "</div>"
-                + "<div class='medium-8 columns'>"
-                  + "<div class='medium-8 columns'>"
-                    + "<h4 id='i'>" + name + "</h4>"
-                  + "</div>"
-                  + "<div class='medium-4 columns'>"
-                    + "<div id='addRM'>&#x2714;</div>"
-                  + "</div>"
-                  + "<div class='row'>"
-                    + "<div class='medium-12 columns'>"
-                      + " <p>" + summary + "</p>"
-                    + "</div>"
+                + "<div class='row'>"
+                  + "<div class='medium-12 small-12 columns'>"
+                    + " <p>" + summary + "</p>"
                   + "</div>"
                 + "</div>"
               + "</div>"
-            +"</button></li>";
+            + "</div>"
+          +"</li>";
     return html;
 };
 
 var createBagHTML = function (name, img) {
-  var html = "<li class='myDevice' >"
-            + "<button id='"+name+"' onclick='rmItem(this.id)' name='"+name+"'>"
-              + "<div class='row'>"
-                + "<div class='medium-12 columns'>"
-                  + "<div class='medium-8 columns'>"
-                    + "<h5>" + name + "</h5>"
-                  + "</div>"
-                  + "<div class='medium-4 columns end'>"
-                    + "<div id='addRM'>&#x2716;</div>"
-                  + "</div>"
-                + "</div>"
+  var html = "<li class='myDevice' id='"+name+"'>"
+            + "<div class='row'>"
+              + "<div class='medium-10 small-11 columns'>"
+                + "<h5>" + name + "</h5>"
               + "</div>"
-              + "<div class='row'>"
-                +"<div class='medium-12 columns'>"
-                  + "<img src='"+img+"'>"
-                + "</div>"
+              + "<div class='medium-2 small-1 columns' id='R'>"
+                + "<h5><button onclick='rmItem(this.name)' name='"
+                  + name +"'>&#x2716;"
+                + "</button></h5>"
               + "</div>"
-            +"</button></li>";
+            + "</div>"
+            + "<div class='row'>"
+              +"<div class='medium-12 small-12 columns'>"
+                + "<img src='"+img+"'>"
+              + "</div>"
+            + "</div>"
+          + "</li>";
     return html;
 };
 
@@ -87,8 +97,7 @@ $(document).ready(function () {
                     myDev.name = json_obj.results[i].title;
                     myDev.summary = json_obj.results[i].summary;
                     myDev.img = json_obj.results[i].image.standard;
-                    output += createHTML(myDev.name, myDev.summary, myDev.img);
-                    myGearBag.add(myDev.name, myDev.summary, myDev.img);
+                    output += createHTML(myDev.name, myDev.summary, myDev.img, i);
                 }
                 output+="</ul>";
                 $('bag').html(output);

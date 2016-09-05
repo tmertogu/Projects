@@ -18,7 +18,6 @@
       var myGearBag = new GearBag();
       //myGearBag.dropTable();
       myGearBag.create();
-      myGearBag.removeHidden();
       //myGearBag.removeAll();
       myGearBag.listAll();
     </script>
@@ -27,31 +26,33 @@
   <body>
     <header>
       <div class="row">
-        <div class="medium-12 columns">
-          <h1 class="header">"Grab Bag" for all of your devices</h1>
-          <div class="top-bar">
+        <div class="medium-12 columns" style="padding-top: 10px;">
+          <h1 class="header" style="border: 1px solid #8e8e8e;">Grab Bag</h1>
+        </div>
+        <div class="medium-12 columns " style="padding-top: 5px;">
+          <div class="top-bar" style="border: 1px solid #8e8e8e;">
             <div class="top-bar-left">
               <ul class="menu">
                 <li class="menu-text">What devices do you own?</li>
-                <li class="menu-text"><label>Click on device to add/remove</label></li>
+                <li class="menu-text hide-for-small-only"><label>Click on device to add/remove</label></li>
               </ul>
             </div>
             <div class="top-bar-right">
-              <ul class="dropdown menu" data-dropdown-menu>
-                <li class="menu-text" class="hide-for-small-only">My Grab Bag</li>
+              <ul class="menu">
+                <li class="menu-text hide-for-small-only">My Grab Bag</li>
               </ul>
             </div>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="medium-8 columns">
-          <input type="text" placeholder="Search for your device by name" id="searchText" />
+        <div class="large-8 medium-8 small-12 columns" style="padding-top: 15px;">
+          <input type="text" style="border: 1px solid #8e8e8e;" 
+                 placeholder="Search for your device by name" id="searchText" />
         </div>
-        <div class="medium-4 columns">
-          <div class="top-bar">
+        <div class="large-4 medium-4 hide-for-small-only columns" style="padding-top: 15px;">
+          <div class="top-bar" style="border: 1px solid #8e8e8e;">
             <div class="top-bar-right">
-              <a href="#" class="show-for-small-only"><label>My Grab Bag</label></a>
               <a href="#"><button onclick='removeAll()'>Delete All</button></a>
             </div>
           </div>
@@ -61,12 +62,19 @@
 
     <main>
       <div class="row">
-        <div class="medium-8 columns">
+        <div class="large-8 medium-8 small-12 columns">
           <div id="scrollable">
             <bag class="items"><ul id="bag"></ul></bag>
           </div>
         </div>
-        <div class="medium-4 columns">
+        <div class="small-12 show-for-small-only columns" style="padding-top: 15px;">
+          <div class="top-bar" style="border: 1px solid #8e8e8e;">
+            <div class="top-bar-right">
+              <a href="#"><button onclick='removeAll()'>Delete All</button></a>
+            </div>
+          </div>
+        </div>
+        <div class="large-4 medium-4 small-12 columns">
           <div id="scrollable">
             <myBag class="items"><ul id="myBag"></ul></myBag>
           </div>

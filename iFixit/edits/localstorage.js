@@ -13,36 +13,27 @@ GearBag.prototype.create = function () {
     this.myGearBag.transaction(function (tx) {
         tx.executeSql(
             'CREATE TABLE IF NOT EXISTS GEAR (' +
-            'name TEXT UNIQUE, summary TEXT, img TEXT, show BOOLEAN NOT NULL DEFAULT FALSE)', [],
+            'name TEXT UNIQUE, summary TEXT, img TEXT, date TEXT)', [],
             function (tx, results) { console.log("Successfully Created")},
             function (tx, error) { console.log("Error, could not create")}
         );
     });
 };
 GearBag.prototype.add = function (name, summary, img) {
+    var d = new Date();
     this.myGearBag.transaction(function (tx) {
         tx.executeSql(
-            'INSERT INTO GEAR (name, summary, img) '+
-            'VALUES (?, ?, ?)', [name, summary, img],
+            'INSERT OR REPLACE INTO GEAR (name, summary, img, date) '+
+            'VALUES (?, ?, ?, ?)', [name, summary, img, d.getTime()],
             function (tx, results) { console.log("Successfully Inserted")},
             function (tx, error) { console.log("Error, could not insert")}
         );
     });
 };
 
-GearBag.prototype.showHide = function (name, b) {
-    this.myGearBag.transaction(function (tx) {
-        tx.executeSql(
-            'UPDATE GEAR SET show =? where NAME =?', [b, name],
-            function (tx, results) { console.log("Successfully Updated")},
-            function (tx, error) { console.log("Error, could not update")}
-        );
-    });
-};
-
 GearBag.prototype.listAll = function () {
     this.myGearBag.transaction(function (tx) {
-        tx.executeSql('SELECT * FROM GEAR WHERE show = "TRUE" ORDER BY rowid DESC',
+        tx.executeSql('SELECT * FROM GEAR ORDER BY date DESC',
             [], function (tx, results) {
             var len = results.rows.length, i;
             console.log("Found rows: " + len);
@@ -58,30 +49,22 @@ GearBag.prototype.listAll = function () {
     }, null);
 };
 
-GearBag.prototype.remove = function (name, summary, img) {
+GearBag.prototype.remove = function (name) {
     this.myGearBag.transaction(function (tx) {
         tx.executeSql(
-            'DELETE FROM GEAR WHERE name=? and summary=? and img=?', [name, summary, img],
+            'DELETE FROM GEAR WHERE name=?', [name],
             function (tx, results) { console.log("Successfully Removed")},
             function (tx, error) { console.log("Error, could not remove")}
         );
     });
 };
 
-GearBag.prototype.removeHidden = function () {
-    this.myGearBag.transaction(function (tx) {
-        tx.executeSql(
-            'DELETE FROM GEAR WHERE show = "FALSE"', [],
-            function (tx, results) { console.log("Successfully Removed Hidden")},
-            function (tx, error) { console.log("Error, could not remove hidden")}
-        );
-    });
-};
 
 GearBag.prototype.removeAll = function () {
     this.myGearBag.transaction(function (tx) {
         tx.executeSql(
-            'UPDATE GEAR SET show = "FALSE" where show = "TRUE"', [],
+            'DELETE FROM GEAR', [],
+            // 'UPDATE GEAR SET show = "FALSE" where show = "TRUE"', [],
             function (tx, results) { console.log("Successfully Removed All")},
             function (tx, error) { console.log("Error, could not remove all")}
         );
