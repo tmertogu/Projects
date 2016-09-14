@@ -38,7 +38,7 @@ Bonus:
 - User receives an Alert stating when the internet is cut, and they try to perform an action that requires a network connection.
    
    2. Fullscreen support
-- Have not tackled this part yet.
+- Have not tackled this part yet. 
 
    3. The collection should be persisted across across browser restarts.
 - The local database persists across browser restarts.
