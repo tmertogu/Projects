@@ -13,7 +13,7 @@ Simple Web Application built using:
    Javascript
    Jquery
    WebSQL 
-
+ 
 Here is a short list of features:
    Search iFixit's Device list and add your own devices to personal bag
    User's device list is persistent across browser restarts and page refreshes
